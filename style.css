@@ -24,3 +24,12 @@
     justify-content: center;
     align-items: center;
 }
+.pcGameboard .field {
+    font-size: 5px;
+}
+.hit{
+    background-color: red;
+}
+.miss{
+    background-color: rgb(0, 255, 55);
+}
