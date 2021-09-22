@@ -3,7 +3,7 @@ import { Ship } from "./shipFactory";
 const Gameboard = () => {
 
     let gameboard = [];
-    // [[0,1,2,3...9], [0,1,2,3...9], ... [...] ]
+    // [["", "", "", ....], ["", "", "", ....], ... ["", "", "", ....]]
     for(let i = 0; i<10; i++) {
         gameboard.push([""])
         for(let y = 0; y<9; y++) {
@@ -38,9 +38,9 @@ const Gameboard = () => {
     function receiveAttack(posX, posY) {
         if(gameboard[posY][posX] != "") {
             gameboard[posY][posX].hit(posX, posY)
-            console.log("Its a hit")
+            return [true, posX, posY]
         } else {
-            let missedShot = "a"
+            let missedShot = [false, posX, posY]
             console.log("Its a miss")
             return missedShot;
         }
