@@ -14,17 +14,22 @@
         <h1>BATTLESHIP</h1>
 
         <div class="info">
-            <p id="infoText">Click into the upper Board to start.</p>
+            <p id="infoText">Type in the coordinates to add ur ships. First ship has a length of 3. Or click the random button.</p>
         </div>
         
         <div class="pcGameboard"></div>
-
         <div class="myGameboard"></div>
-        <button id="orientationBtn">Vertical</button>
-        <input type="text" name="posX" id="posXInput" placeholder="Position X">
-        <input type="text" name="posY" id="posYInput" placeholder="Position Y">
-        <button id="addShipBtn">Add ship</button>
 
+
+        <div class="wrapper">
+            <div class="posInput">
+                <input type="number" name="posX" id="posXInput" placeholder="Pos X" min="0" max="9">
+                <input type="number" name="posY" id="posYInput" placeholder="Pos Y" min="0" max="9">
+            </div>
+            <button id="addShipBtn">Add ship</button>
+            <button id="orientationBtn" value="h">Vertical</button>
+            <button id="randomBtn">Random</button>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

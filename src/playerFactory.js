@@ -1,4 +1,4 @@
-const Player = (name) => {
+const Player = () => {
 
     let turn = false;
 
@@ -10,7 +10,7 @@ const Player = (name) => {
         }
     }
     
-    return { name, swapTurn, turn }
+    return {swapTurn, turn }
 
 }
 

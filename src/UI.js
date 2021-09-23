@@ -2,7 +2,6 @@ const UI = (() => {
 
     const info = document.querySelector(".info")
 
-
     function displayBoard(container, gameboard) {
         container.innerHTML = "";
         for(let i = 0; i<10; i++) {
@@ -35,8 +34,7 @@ const UI = (() => {
                 myField.classList.add("hit");
             } else {
                 myField.classList.add("miss");
-            }
-            
+            }         
         } else {
             if(isHit) {
                 e.target.classList.add("hit");

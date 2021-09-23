@@ -4,7 +4,7 @@ const Ship = (length) => {
     // [["", "", "", ....], ["", "", "", ....], ... ["", "", "", ....] ]
     for(let i = 0; i<10; i++) {
         hits.push([""])
-        for(let y = 0; y<10; y++) {
+        for(let y = 0; y<9; y++) {
             hits[i].push("")
         }
     }

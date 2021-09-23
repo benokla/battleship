@@ -14,7 +14,6 @@ const Gameboard = () => {
     let ships = [];
    
     function placeShips(posX, posY, length, dir) {
-        console.log(posX, posY, length, dir)
         posX = Number(posX)
         posY = Number(posY)
         let ship = Ship(length)
@@ -35,9 +34,10 @@ const Gameboard = () => {
                 }
                 gameboard[posY][posX] = ship;
                 posX++;
-            }
-            
-        } else if(dir == "v") {
+            }  
+        } 
+        //vertical 
+        else if(dir == "v") {
             if(posY+length > 9) return;
 
             for(let i = 0; i<length; i++) {
