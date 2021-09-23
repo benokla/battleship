@@ -4,9 +4,9 @@ const UI = (() => {
 
 
     function displayBoard(container, gameboard) {
-        
-        for(let i = 0; i<gameboard.length; i++) {
-            for(let y = 0; y<gameboard[i].length; y++) {
+        container.innerHTML = "";
+        for(let i = 0; i<10; i++) {
+            for(let y = 0; y<10; y++) {
                 const div = document.createElement("div");
                 div.dataset.posX = y;
                 div.dataset.posY = i;
@@ -17,7 +17,7 @@ const UI = (() => {
         }
     }
 
-    function displayShips(element, visible) {
+    function displayShips(element) {
             if(element == "") {
                 return ""
             } else {

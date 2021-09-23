@@ -14,25 +14,46 @@ const Gameboard = () => {
     let ships = [];
    
     function placeShips(posX, posY, length, dir) {
+        console.log(posX, posY, length, dir)
+        posX = Number(posX)
+        posY = Number(posY)
         let ship = Ship(length)
         ships.push(ship)
-
+        
         //horizontal
         if(dir == "h") {
             if(posX+length > 9) return;
-            gameboard[posY][posX] = ship;
-            for(let i = 1; i<length; i++) {
-                posX++;
+            
+            for(let i = 0; i<length; i++) { 
+                if(gameboard[posY][posX] != "") {
+                    while(i>0){
+                        posX--;
+                        gameboard[posY][posX] = "";
+                        i--
+                    }
+                    return;
+                }
                 gameboard[posY][posX] = ship;
+                posX++;
             }
+            
         } else if(dir == "v") {
             if(posY+length > 9) return;
-            gameboard[posY][posX] = ship;
-            for(let i = 1; i<length; i++) {
+
+            for(let i = 0; i<length; i++) {
+                if(gameboard[posY][posX] != "") {
+                    while(i>0){
+                        posY--;
+                        gameboard[posY][posX] = "";
+                        i--
+                    }
+                    return;
+                }
+                gameboard[posY][posX] = ship;
                 posY++;
-                gameboard[posY][posX] = ship
             }
         }
+        return true;
     }
 
     function receiveAttack(posX, posY) {
@@ -40,9 +61,7 @@ const Gameboard = () => {
             gameboard[posY][posX].hit(posX, posY)
             return [true, posX, posY]
         } else {
-            let missedShot = [false, posX, posY]
-            console.log("Its a miss")
-            return missedShot;
+            return [false, posX, posY]    
         }
     }
 

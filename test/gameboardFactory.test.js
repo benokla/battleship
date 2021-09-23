@@ -37,7 +37,7 @@ test("receive attack hit", () => {
 test("receive attack miss", () => {
     const gb1 = Gameboard();
     gb1.placeShips(0, 3, 3, "h")
-    expect(gb1.receiveAttack(1, 8)).toBe("a")
+    expect(gb1.receiveAttack(1, 8)).toStrictEqual([false, 1, 8])
 })
 
 test("all ships sunk true", () => {
