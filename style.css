@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 .myGameboard, .pcGameboard{
     width: 300px;
@@ -9,6 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 1px, rgb(51, 51, 51) 1px 1px 1px 3px;
+    margin-bottom: 30px;
 }
 
 .container{
@@ -19,17 +21,39 @@
 .field{
     width: 30px;
     height: 30px;
-    border: 1px solid red;
+    border: 1px solid rgb(22, 22, 22);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .pcGameboard .field {
-    font-size: 5px;
+    font-size: 0px;
 }
 .hit{
     background-color: red;
 }
 .miss{
     background-color: rgb(0, 255, 55);
+}
+h1 {
+    margin: 40px 0px;
+}
+.info {
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+.posInput{
+    display: flex;
+    flex-direction: column;
+}
+#posXInput, #posYInput {
+    width: 80px;
+}
+button {
+    padding: 5px;
 }
